@@ -29,7 +29,6 @@ public final class Pruebas {
         verificar(a, cb);
         if (!Arrays.equals(h, cb)) throw new AssertionError("Las mezclas difieren");
     }
-
     public static void main(String[] args) {
         caso(new int[][] {{1,4,9}, {2,4}, {3,7,10,12}, {1,6}, {5,8,9}});
         caso(new int[][] {{1}, {1}, {1}, {1}, {1}});
