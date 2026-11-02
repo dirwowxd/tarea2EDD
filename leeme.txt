@@ -1,5 +1,5 @@
 TAREA 2 - ESTRUCTURAS DE DATOS - UBB - PRIMAVERA 2026
-Integrantes: [COMPLETAR]
+Integrantes: Vicente Sepulveda y Cristobal Poblete
 
 Requisitos: JDK 17 o superior (probado con Java 21).
 Compilacion (terminal dentro de la carpeta):
@@ -36,8 +36,6 @@ Archivos del proyecto:
  Pruebas.java: pruebas dirigidas y aleatorias.
  Experimentos.java: cronometraje y las 10 configuraciones.
 
-Informe PDF: [ADJUNTAR A LA ENTREGA]
-Video de 4 a 7 minutos o enlace: [ADJUNTAR A LA ENTREGA]
 
 Complejidad: ambas soluciones mantienen a lo sumo k entradas, una por arreglo.
 Se extraen n minimos y se insertan como maximo n siguientes. Cada operacion
