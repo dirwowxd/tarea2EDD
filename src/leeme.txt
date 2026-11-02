@@ -1,0 +1,45 @@
+TAREA 2 - ESTRUCTURAS DE DATOS - UBB - PRIMAVERA 2026
+Integrantes: [COMPLETAR]
+
+Requisitos: JDK 17 o superior (probado con Java 21).
+Compilacion (terminal dentro de la carpeta):
+  javac -encoding UTF-8 *.java
+
+Pruebas de correccion:
+  java Pruebas
+
+Generar un archivo reproducible (n k nombre semilla [maxValor]):
+  java Generador 14 5 ejemplo.txt 12345 1000000
+
+Medir un archivo (3 calentamientos y 10 mediciones por algoritmo):
+  java -Xmx2g Experimentos ejemplo.txt
+
+Ejecutar las 10 configuraciones obligatorias, generar resultados.csv:
+  java -Xmx2g Experimentos todos datos resultados.csv
+
+El modo 'todos' genera cada archivo, lo mide usando exactamente la misma
+entrada para ambos algoritmos y lo elimina al finalizar para ahorrar espacio.
+Se puede reproducir individualmente con 'Generador'.
+Semilla usada para cada configuracion: 2026 + n + k.
+Rango de valores de todas las configuraciones: [1, 1000000].
+La generacion incluye duplicados y tamaños desiguales de arreglos.
+Los tiempos miden solo construccion de estructuras y mezcla, no E/S ni validacion.
+El CSV contiene los tiempos promedio en milisegundos para crear los graficos.
+
+Archivos del proyecto:
+ Entrada.java: tripleta (valor, arreglo, posicion).
+ MinHeap.java: heap minimo propio.
+ ColaBinomial.java: cola binomial minima propia.
+ Mezclas.java: kMergeHeap y kMergeCB.
+ Generador.java: generador de datos.
+ Lector.java: lector del formato con separadores -1.
+ Pruebas.java: pruebas dirigidas y aleatorias.
+ Experimentos.java: cronometraje y las 10 configuraciones.
+
+Informe PDF: [ADJUNTAR A LA ENTREGA]
+Video de 4 a 7 minutos o enlace: [ADJUNTAR A LA ENTREGA]
+
+Complejidad: ambas soluciones mantienen a lo sumo k entradas, una por arreglo.
+Se extraen n minimos y se insertan como maximo n siguientes. Cada operacion
+cuesta O(log k), por lo que el total es O(n log k); espacio auxiliar O(k),
+sin contar la salida B de longitud n.
