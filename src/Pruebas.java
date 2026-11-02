@@ -21,7 +21,6 @@ public final class Pruebas {
         }
         if (!frecuencias.isEmpty()) throw new AssertionError("Faltan valores");
     }
-
     private static void caso(int[][] a) {
         int[] h = Mezclas.kMergeHeap(a);
         int[] cb = Mezclas.kMergeCB(a);
