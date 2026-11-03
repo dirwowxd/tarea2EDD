@@ -21,18 +21,17 @@ public final class Experimentos {
             int[] obtenido = mezcla.apply(a);
             long fin = System.nanoTime();
             totalNs += fin - inicio;
-            // Validacion EXCLUIDA del cronometro.
             if (!Arrays.equals(referencia, obtenido)) throw new AssertionError("Error en repeticion " + i);
         }
         return totalNs / (double) REPETICIONES / 1_000_000.0;
     }
 
     public static double[] ejecutar(Path archivo) throws IOException {
-        int[][] a = Lector.leer(archivo); // Lectura EXCLUIDA del cronometro.
+        int[][] a = Lector.leer(archivo);
         int n = 0;
         for (int[] arreglo : a) n += arreglo.length;
         int[] referencia = Mezclas.kMergeHeap(a);
-        Pruebas.verificar(a, referencia); // Verificacion completa EXCLUIDA.
+        Pruebas.verificar(a, referencia);
         double heapMs = medir(a, Mezclas::kMergeHeap, referencia);
         double cbMs = medir(a, Mezclas::kMergeCB, referencia);
         System.out.printf(Locale.US, "n=%d k=%d Heap=%.3f ms ColaBinomial=%.3f ms%n",
